@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de DOM (Document Object Model) con JavaScript</title>
+</head>
+<body>
+    <div id="Mensaje">Texto fijo</div>
+    <div id="Mensaje2" class="mensajeImportante">Texto fijo 3</div>
+    <div id="Mensaje3" class="mensajeImportante">Texto fijo 3</div>
+    <ul id="frutas">
+        <li>Manzanas</li>
+        <li>Peras</li>
+        <li>Platanos</li>
+        <li>Melones</li>
+    </ul>
+    <ol>
+        <li>Primavera</li>
+        <li>Verano</li>
+        <li>Otoño</li>
+        <li>Invierno</li>
+    </ol>
+    <script>
+        console.log(document.title);
+        console.log(document.doctype);
+        console.log(document.lastModified);
+        let divMensaje=document.getElementById("Mensaje");
+
+        if(divMensaje)
+            //alert(divMensaje.innerText);
+            divMensaje.innerText += "Modificado con JavaScript";
+
+        let losDivs = document.getElementsByTagName("div");
+        console.log(`Hay ${losDivs.length} divs en el documento`);
+        if(losDivs.length > 0){
+            losDivs[0].innerText = "Este es el primer DIV del documento";
+        }
+        let losDivsImportanes=document.getElementsByClassName("mensajeImportante");
+        console.log(`Hay ${losDivsImportanes.length} divs importantes en el documento..`)
+
+        // Como HTML
+        let listaFrutas = document.getElementById("frutas");
+        listaFrutas.innerHTML += "<li>Sandía</li><li>Durazno</li>";
+
+        // Como OBJETO
+        let lista = document.getElementById("frutas");
+        //lista.innerHTML="";
+        let newFruit = document.createElement("li");
+        newFruit.textContent = "Fresa";
+        lista.appendChild(newFruit);
+        newFruit = document.createElement("li");
+        newFruit.innerText = "Uva";
+        lista.appendChild(newFruit);
+
+        lista.childNodes.forEach(element => console.log(element.innerText));
+    </script>
+</body>
+</html>
