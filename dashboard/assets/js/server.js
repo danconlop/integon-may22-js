@@ -17,7 +17,7 @@ const url = "mongodb://localhost:27017";
 let ObjectId = require('mongodb').ObjectId;
 
 
-let db, alumnos
+let db, authors
 mongo.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -29,7 +29,7 @@ mongo.connect(url, {
         }
         db = client.db("cursojavascript");
         console.log("Conectado a la DB");
-        alumnos = db.collection("alumnos");
+        authors = db.collection("authors");
         console.log("Conectado a la tabla");
     });
 
@@ -39,18 +39,42 @@ app.get("/demo", (request, response) => {
 });
 
 /*
-    GET: ALUMNOS
+    GET: AUTHORS
 */
-app.get("/alumnos", (request, response) => {
-    console.log("Se ejecutó la ruta alumnos...");
-    alumnos.find().toArray((err, items) => {
+app.get("/authors", (request, response) => {
+    console.log("Se ejecutó la ruta autores...");
+    authors.find().toArray((err, items) => {
         if (err) {
             console.log(err);
             response.status(500).json({ err: err });
             return;
         }
-        response.status(200).json({ alumnos: items })
+        response.status(200).json({ authors: items })
     });
+});
+/*
+    POST: ALUMNOS
+*/
+app.post("/authors", (request, response) => {
+
+    authors.insertOne({
+        foto: request.body.foto,
+        nombre: request.body.nombre,
+        correo: request.body.correo,
+        puesto: request.body.puesto,
+        puesto2: request.body.puesto2,
+        status: request.body.status,
+        employed: request.body.employed
+    },
+        (err, result) => {
+            if (err) {
+                console.log(err);
+                response.status(500).json({ err: err });
+                return;
+            }
+            response.status(200).json({ ok: true })
+        }
+    )
 });
 /*
     GET: ALUMNO POR ID
@@ -67,26 +91,7 @@ app.get("/alumnos/:id", (request, response) => {
         response.status(200).json({ alumnos: items })
     });
 });
-/*
-    POST: ALUMNOS
-*/
-app.post("/alumnos", (request, response) => {
 
-    alumnos.insertOne({
-        name: request.body.name,
-        apellido: request.body.apellido,
-        ciudad: request.body.ciudad
-    },
-        (err, result) => {
-            if (err) {
-                console.log(err);
-                response.status(500).json({ err: err });
-                return;
-            }
-            response.status(200).json({ ok: true })
-        }
-    )
-});
 /*
     SERVER LISTEN
 */

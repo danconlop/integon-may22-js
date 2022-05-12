@@ -1,25 +1,23 @@
-let html = "<ol>";
-let alumnos = [];
-
-
-function AccesoAPI(){
+function AccesoAPI() {
     const url = "http://localhost:3005/alumnos";
     let xhttp = new XMLHttpRequest(); // Objeto para hacer una llamada XHR
     let body = document.getElementById("body");
+    let html = "<ol>";
 
-    xhttp.open('GET', url); 
+    xhttp.open('GET', url);
 
     xhttp.setRequestHeader('Accept', 'application/json');
     // Se delega ele vento onreadystatechange
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             const data = JSON.parse(this.response);
 
-            alumnos = data.alumnos;
-            alumnos.forEach(alumno => {
-                html += `<li><strong>Nombre:</strong> ${alumno.name} <strong>Apellido:</strong> ${alumno.apellido} <strong>Ciudad:</strong> ${alumno.ciudad}</li>`;
-            });
-            html+="</ol>";
+            data.alumnos.forEach(element => {
+                html += `<li>
+                            <strong>Nombre:</strong> ${element.name} <strong>Apellido:</strong> ${element.apellido} <strong>Ciudad:</strong> ${element.ciudad}
+                        </li>`;
+            })
+            html += "</ol>";
 
             body.innerHTML = html;
         }

@@ -33,6 +33,9 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.5" rel="stylesheet" />
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -361,7 +364,52 @@
             <div class="card-header pb-0">
               <h6>Authors table</h6>
               <li class="nav-item d-flex align-items-center">
-                <button type="button" class="btn btn-outline-secondary btn-sm mb-0 me-3" onclick="addAuthor()">Add Author</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm mb-0 me-3" id="addAuthor">Add Author</button>
+                <!-- Input form -->
+                <div class="d-flex d-none" id="formAuthor">
+                  <div>
+                    <div class="form-group">
+                      <label for="foto">foto</label>
+                      <input type="text" class="form-control" name="foto" id="foto">
+                    </div>
+                    <div class="form-group">
+                      <label for="nombre">nombre</label>
+                      <input type="text" class="form-control" name="nombre" id="nombre">
+                    </div>
+                    <div class="form-group">
+                      <label for="correo">correo</label>
+                      <input type="email" class="form-control" name="correo" id="correo">
+                    </div>
+                  </div>
+                  <div class="ms-2">
+                    <div class="form-group">
+                      <label for="puesto" class="form-label">puesto</label>
+                      <input type="text" class="form-control" name="puesto" id="puesto">
+                    </div>
+                    <div class="form-group">
+                      <label for="puesto2" class="form-label">posición</label>
+                      <input type="text" class="form-control" name="puesto2" id="puesto2">
+                    </div>
+                    <div class="form-group">
+                      <label for="status" class="form-label">status</label>
+                      <input type="text" class="form-control" name="status" id="status">
+                    </div>
+                  </div>
+                  <div class="ms-2">
+                    <div class="form-group">
+                      <label for="employed" class="form-label">employed</label>
+                      <input type="text" class="form-control" name="employed" id="employed">
+                    </div>
+                    <div class="form-group justify-content-center">
+                      <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                      <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <!-- end input form -->
               </li>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
@@ -896,6 +944,7 @@
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.5"></script>
   <script src="../assets/js/author.js"></script>
   <script src="../assets/js/cursoIntegon.js"></script>
+  <script src="../assets/js/authorsJQuery.js"></script>
 </body>
 
 </html>
