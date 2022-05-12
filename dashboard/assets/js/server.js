@@ -30,6 +30,7 @@ mongo.connect(url, {
         db = client.db("cursojavascript");
         console.log("Conectado a la DB");
         authors = db.collection("authors");
+        users = db.collection("users");
         console.log("Conectado a la tabla");
     });
 
@@ -91,10 +92,26 @@ app.get("/alumnos/:id", (request, response) => {
         response.status(200).json({ alumnos: items })
     });
 });
+/*
+    GET: USUARIO POR CORREO
+*/
+app.get("/users/:username", (request, response) => {
+    let username = request.params.username;
+    console.log(`Buscando al usuario ${username}`);
+    users.findOne({username:username},(err, items) => {
+        if (err) {
+            console.log(err);
+            response.status(500).json({ err: err });
+            return;
+        }
+        response.status(200).json({ user : items })
+    });
+});
 
 /*
     SERVER LISTEN
 */
 app.listen(3005, () => {
+    console.log("SERVER DASHBOARD");
     console.log("Escuchando en el puerto 3005...");
 });

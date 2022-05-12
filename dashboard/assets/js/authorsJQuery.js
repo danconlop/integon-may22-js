@@ -87,10 +87,12 @@ $(document).ready(function () {
         formPuesto2 = document.getElementById("puesto2");
         formStatus = document.getElementById("status");
         formEmployed = document.getElementById("employed");
+
         // Validacion de datos
-        if (!formFoto.value){
+        if (!$("#foto").val()){
             alert("Ingrese el nombre de la foto");
-            formFoto.focus();
+            $("#foto").focus();
+            //formFoto.focus();
             return;
         }
         if (!formNombre.value){
