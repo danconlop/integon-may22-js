@@ -12,15 +12,21 @@ function fetchUserData(user, pass) {
         })
         .then((data) => {
 
-            if(data.user){
+            if (data.user) {
                 // Usuario existe
-                if(data.user.password == pass){
-                    loginSection.innerHTML = `<h3 class="font-weight-bolder text-info text-gradient">${data.user.username} you've successfully logged in, welcome</h3>`;
+                if (data.user.password == pass) {
+                    //loginSection.innerHTML = `<h3 class="font-weight-bolder text-info text-gradient">${data.user.username} you've successfully logged in, welcome</h3>`;
+                    $('#loginSuccessful').removeClass('d-none');
+                    $('#loginBlock').addClass('d-none');
                 } else {
-                    loginSection.innerHTML += `<h3 class="font-weight-bolder text-danger text-gradient text-center">Wrong credentials</h3>`;
+                    //loginSection.innerHTML += `<h3 class="font-weight-bolder text-danger text-gradient text-center">Wrong credentials</h3>`;
+                    $('#loginFailed').removeClass('d-none');
+                    $('#loginBlock').addClass('d-none');
                 }
             } else {
-                loginSection.innerHTML += `<h3 class="font-weight-bolder text-danger text-gradient text-center">Username not found</h3>`;
+                //loginSection.innerHTML += `<h3 class="font-weight-bolder text-danger text-gradient text-center">Username not found</h3>`;
+                $('#userNotFound').removeClass('d-none');
+                $('#loginBlock').addClass('d-none');
             }
 
         })
@@ -29,11 +35,11 @@ function fetchUserData(user, pass) {
         });
 }
 
-function checkUserData(){
+function checkUserData() {
     let userName = document.getElementById("Email").value;
     let password = document.getElementById("Password").value;
-    
-    if (userName != ""){
+
+    if (userName != "") {
         fetchUserData(userName, password);
     }
 }

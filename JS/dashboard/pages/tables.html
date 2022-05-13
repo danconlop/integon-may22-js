@@ -363,8 +363,18 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Authors table</h6>
-              <li class="nav-item d-flex align-items-center">
-                <button type="button" class="btn btn-outline-secondary btn-sm mb-0 me-3" id="addAuthor">Add Author</button>
+              <div class="d-flex">
+                <div>
+                  <button type="button" class="btn btn-outline-secondary btn-sm mb-0 me-3" id="addAuthor">Add Author</button>
+                </div>
+                <div class="justify-content-end" id="filters">
+                  <button type="button" class="btn btn-sm mb-0 me-3 btn-outline-primary" id="Clear">Clear</button>
+                  <button type="button" class="btn btn-outline-secondary btn-sm mb-0 me-3" id="Programator">Programator</button>
+                  <button type="button" class="btn btn-outline-secondary btn-sm mb-0 me-3" id="Manager">Manager</button>
+                </div>
+              </div>
+              <li class="nav-item d-flex justify-content-end">
+                
                 <!-- Input form -->
                 <div class="d-flex d-none" id="formAuthor">
                   <div>
@@ -437,7 +447,7 @@
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">John Michael</h6>
-                            <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
+                            <p class="text-xs text-secondary mb-0 d-none">john@creative-tim.com</p>
                           </div>
                         </div>
                       </td>
@@ -498,7 +508,7 @@
                         </div>
                       </td>
                       <td>
-                        <p class="text-xs font-weight-bold mb-0">Executive</p>
+                        <p class="text-xs font-weight-bold mb-0">Manager</p>
                         <p class="text-xs text-secondary mb-0">Projects</p>
                       </td>
                       <td class="align-middle text-center text-sm">
@@ -582,7 +592,7 @@
                         </div>
                       </td>
                       <td>
-                        <p class="text-xs font-weight-bold mb-0">Programtor</p>
+                        <p class="text-xs font-weight-bold mb-0">Programator</p>
                         <p class="text-xs text-secondary mb-0">Developer</p>
                       </td>
                       <td class="align-middle text-center text-sm">
@@ -946,9 +956,10 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.5"></script>
-  <script src="../assets/js/author.js"></script>
+  <!-- <script src="../assets/js/author.js"></script>
   <script src="../assets/js/cursoIntegon.js"></script>
-  <script src="../assets/js/authorsJQuery.js"></script>
+  <script src="../assets/js/authorsJQuery.js"></script> -->
+  <script src="../assets/js/filterjquery.js"></script>
 </body>
 
 </html>

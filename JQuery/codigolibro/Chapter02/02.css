@@ -2,7 +2,8 @@
    Default Styles
 ************************************** */
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -100,11 +101,17 @@ li.afterlink {
   border-right: 4px solid #090;
 }
 
+.afterlink {
+  border-right: 4px solid #090;
+  color: yellowgreen;
+}
+
 table {
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   text-align: left;
   padding: 2px 4px;
 }
@@ -114,8 +121,12 @@ th, td {
   color: #fff;
 }
 
+/* tr {
+  background-color: yellow;
+} */
+
 .alt {
-  background-color: #ccc;
+  background-color: red;
 }
 
 .highlight {
@@ -145,3 +156,4 @@ th, td {
 .big-letter::first-letter {
   font-size: 1.4em;
 }
+

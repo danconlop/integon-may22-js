@@ -33,6 +33,8 @@
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.5" rel="stylesheet" />
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body class="">
@@ -100,6 +102,15 @@
         <div class="container">
           <div class="row">
             <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+              <div class="card card-plain mt-8 d-none" id="loginSuccessful">
+                <h3 class="font-weight-bolder text-info text-gradient">you've successfully logged in, welcome</h3>
+              </div>
+              <div class="card card-plain mt-8 d-none" id="loginFailed">
+                <h3 class="font-weight-bolder text-danger text-gradient text-center">Wrong credentials</h3>
+              </div>
+              <div class="card card-plain mt-8 d-none" id="userNotFound">
+                <h3 class="font-weight-bolder text-danger text-gradient text-center">User not found</h3>
+              </div>
               <div class="card card-plain mt-8" id="loginBlock">
                 <div class="card-header pb-0 text-left bg-transparent">
                   <h3 class="font-weight-bolder text-info text-gradient">Welcome back</h3>
