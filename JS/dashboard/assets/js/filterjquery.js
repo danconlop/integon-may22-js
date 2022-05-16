@@ -23,5 +23,6 @@ $(() => {
         .click(function () {
             $(`#authorsTBody > tr`)
                 .removeClass('d-none')
+                once = true;
         });
 });

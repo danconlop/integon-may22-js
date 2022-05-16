@@ -45,6 +45,7 @@ a {
 ************************************** */
 
 #switcher {
+  /* position: absolute; */
   width: 300px;
   padding: .5em;
   border: 1px solid #777;
