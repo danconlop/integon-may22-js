@@ -29,6 +29,7 @@ $(document).ready(function () {
 
             result.authors.forEach(e => {
                 let classStatus = e.status == "Online" ? "success" : "secondary";
+                /*
                 // New Row
                 let newAuthor = authorsTable.insertRow(-1);
 
@@ -67,10 +68,41 @@ $(document).ready(function () {
                     Edit
                 </a>`;
                 sectionEdit.className = "align-middle";
+                */
+                tableBody.innerHTML +=`<tr>
+                                <td>
+                                <div class="d-flex px-2 py-1">
+                                    <div>
+                                    <img src="../assets/img/${e.foto}" class="avatar avatar-sm me-3" alt="user1">
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="mb-0 text-sm">${e.nombre}</h6>
+                                    <p class="text-xs text-secondary mb-0 d-none">${e.correo}</p>
+                                    </div>
+                                </div>
+                                </td>
+                                <td>
+                                <p class="text-xs font-weight-bold mb-0">${e.puesto}</p>
+                                <p class="text-xs text-secondary mb-0">${e.puesto2}</p>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                <span class="badge badge-sm bg-gradient-${classStatus}">${e.status}</span>
+                                </td>
+                                <td class="align-middle text-center">
+                                <span class="text-secondary text-xs font-weight-bold">${e.employed}</span>
+                                </td>
+                                <td class="align-middle">
+                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    Edit
+                                </a>
+                                </td>
+                            </tr>`;
             })
         }
     });
 });
+
+/*$(".inboxfeedlist li").live('hover',function(){});*/
 
 // Variable con los datos del autor
 let author;// = new Author("team-2.jpg", "Alejandro Gomez", "agomez@gmail.com", "Manager", "Jr", "Offine", "5/10/2021");
@@ -92,35 +124,34 @@ $(document).ready(function () {
         if (!$("#foto").val()){
             alert("Ingrese el nombre de la foto");
             $("#foto").focus();
-            //formFoto.focus();
             return;
         }
-        if (!formNombre.value){
+        if (!$("#nombre").val()){
             alert("Ingrese el nombre del empleado");
             formNombre.focus();
             return;
         }
-        if (!formCorreo.value){
+        if (!$("#correo").val()){
             alert("Ingrese la dirección de correo");
             formCorreo.focus();
             return;
         }
-        if (!formPuesto.value){
+        if (!$("#puesto").val()){
             alert("Ingrese el puesto del empleado");
             formPuesto.focus();
             return;
         }
-        if (!formPuesto2.value){
+        if (!$("#puesto2").val()){
             alert("Ingrese la posición del empleado");
             formPuesto2.focus();
             return;
         }
-        if (!formStatus.value){
+        if (!$("#status").val()){
             alert("Ingrese el estatus del empleado");
             formStatus.focus();
             return;
         }
-        if (!formEmployed.value){
+        if (!$("#employed").val()){
             alert("Ingrese la fecha de ingreso del empleado");
             formEmployed.focus();
             return;
@@ -163,7 +194,8 @@ $(document).ready(function () {
                     formEmployed.value = "";
 
                     // Ocultar formulario
-                    frmAuthor.classList.add("d-none");
+                    $('#formAuthor').addClass('d-none');
+                    // frmAuthor.classList.add("d-none");
                 }
             }
         });
@@ -174,6 +206,7 @@ function addAuthorToTable(Author) {
     // Get table element by id
     let authorsTable = document.getElementById("authors");
     let classStatus = Author.status == "Online" ? "success" : "secondary";
+    /*
     // New Row
     let newAuthor = authorsTable.insertRow(-1);
 
@@ -212,4 +245,38 @@ function addAuthorToTable(Author) {
             Edit
         </a>`;
     sectionEdit.className = "align-middle";
+    */
+   /*
+    $('#authorsTBody')
+    .innerHTML+=`<tr>
+                    <td>
+                    <div class="d-flex px-2 py-1">
+                        <div>
+                        <img src="../assets/img/${Author.foto}" class="avatar avatar-sm me-3" alt="user1">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                        <h6 class="mb-0 text-sm">${Author.nombre}</h6>
+                        <p class="text-xs text-secondary mb-0 d-none">${Author.correo}</p>
+                        </div>
+                    </div>
+                    </td>
+                    <td>
+                    <p class="text-xs font-weight-bold mb-0">${Author.puesto}</p>
+                    <p class="text-xs text-secondary mb-0">${Author.puesto2}</p>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                    <span class="badge badge-sm bg-gradient-${classStatus}">${Author.status}</span>
+                    </td>
+                    <td class="align-middle text-center">
+                    <span class="text-secondary text-xs font-weight-bold">${Author.employed}</span>
+                    </td>
+                    <td class="align-middle">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        Edit
+                    </a>
+                    </td>
+                </tr>`
+     .animate({'opacity': 1}, 400)
+    */
+    
 }

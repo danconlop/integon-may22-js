@@ -7,7 +7,7 @@ $(() => {
             const bodyClass = this.id;
             $(`#authorsTBody > tr`)
                 .addClass('d-none')
-                .find(`p:contains(${bodyClass})`)
+                .find(`p:contains(${bodyClass})`) // 
                 .parent()
                 .parent()
                 .removeClass('d-none');
@@ -23,6 +23,6 @@ $(() => {
         .click(function () {
             $(`#authorsTBody > tr`)
                 .removeClass('d-none')
-                once = true;
+            once = true;
         });
 });
