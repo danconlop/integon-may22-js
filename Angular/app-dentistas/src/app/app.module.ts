@@ -6,6 +6,8 @@ import { Ejemplo } from './app.ejemplo';
 import { Tercero } from './app.tercero';
 import { QuintoComponent } from './quinto/quinto.component';
 import { CounterComponent } from './counter/counter.component';
+import { InfoPersonaComponent } from './info-persona/info-persona.component';
+import { MatematicoComponent } from './matematico/matematico.component';
 
 @NgModule({
   declarations: [
@@ -13,12 +15,14 @@ import { CounterComponent } from './counter/counter.component';
     Ejemplo,
     Tercero,
     QuintoComponent,
-    CounterComponent
+    CounterComponent,
+    InfoPersonaComponent,
+    MatematicoComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [QuintoComponent, ComponentOne]
+  bootstrap: [ComponentOne]
 })
 export class AppModule { }
