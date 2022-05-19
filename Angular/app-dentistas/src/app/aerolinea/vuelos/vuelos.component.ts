@@ -26,5 +26,10 @@ export class VuelosComponent implements OnInit {
 
   onClick(){
     this.vuelosService.addVuelo(this.numero,this.fecha,this.horario,this.origen,this.destino);
+    this.numero = "";
+    this.fecha = "";
+    this.horario = "";
+    this.origen = "";
+    this.destino = "";
   }
 }
