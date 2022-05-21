@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { VuelosComponent } from './vuelos/vuelos.component';
 import { FormsModule  } from '@angular/forms';
 
-
 @NgModule({
   declarations: [VuelosComponent],
   imports: [

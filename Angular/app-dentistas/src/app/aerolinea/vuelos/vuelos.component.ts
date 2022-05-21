@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { VuelosService  } from '../vuelos.service';
-import { Vuelos } from '../vuelos';
+import { Vuelos } from '../../shared/interfaces/vuelos';
+import { VuelosService  } from '../../shared/services/vuelos.service';
 
 @Component({
   selector: 'app-vuelos',
@@ -10,7 +10,8 @@ import { Vuelos } from '../vuelos';
 
 export class VuelosComponent implements OnInit {
 
-  vuelos:Vuelos[];
+  vuelos:Vuelos[]=[];
+  vuelo:Vuelos;
   // Datos del vuelo
   numero:string = "";
   fecha:string = "";
@@ -21,15 +22,29 @@ export class VuelosComponent implements OnInit {
   constructor(private vuelosService:VuelosService){}
 
   ngOnInit(){
-    this.vuelos = this.vuelosService.vuelosArray;
+    this.vuelosService
+    .getVuelos()
+    .subscribe(data => this.vuelos =  data)
   }
 
   onClick(){
-    this.vuelosService.addVuelo(this.numero,this.fecha,this.horario,this.origen,this.destino);
-    this.numero = "";
-    this.fecha = "";
-    this.horario = "";
-    this.origen = "";
-    this.destino = "";
+    this.vuelo = {Numero: this.numero,Fecha: this.fecha, Horario: this.horario, Origen: this.origen, Destino: this.destino};
+
+    this.vuelosService.addVuelo(this.vuelo)
+      .subscribe( data => {
+        if(data.status == 200){
+
+          this.vuelos.push(this.vuelo);
+          this.numero = "";
+          this.fecha = "";
+          this.horario = "";
+          this.origen = "";
+          this.destino = "";
+          this.vuelo = null;
+        }
+      });
+
+
+
   }
 }
