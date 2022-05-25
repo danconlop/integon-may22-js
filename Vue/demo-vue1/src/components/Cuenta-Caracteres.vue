@@ -14,6 +14,15 @@
 
 <script>
 export default {
+  beforeCreate(){
+    console.log('Before create...');
+  },
+  created(){
+    console.log('Created....');
+  },
+  beforeMount(){
+    console.log('Before mount...');
+  },
   // Se ejecuta cuando el componente es montado (ciclo de vida del componente)
   mounted() {
     this.cuentaCaracteres();
