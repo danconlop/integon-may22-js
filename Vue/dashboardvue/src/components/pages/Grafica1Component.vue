@@ -1,5 +1,5 @@
 <template>
-    <p>Dashboard works!!</p>
+    <p>Grafica 1 works!!</p>
 </template>
 <script>
 export default {

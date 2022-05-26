@@ -20,12 +20,15 @@
                         </li>
                         <li class="nav-devider"></li>
                         <li class="nav-small-cap">PERSONAL</li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard <span class="label label-rouded label-themecolor pull-right">4</span></span></a>
+                        <!-- <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard <span class="label label-rouded label-themecolor pull-right">4</span></span></a> -->
+                        <li> <router-link to="/dashboard" class="has-arrow waves-effect waves-dark"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard <span class="label label-rouded label-themecolor pull-right">4</span></span></router-link>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="index.html">Minimal </a></li>
+                                <!-- <li><a href="index.html">Minimal </a></li>
                                 <li><a href="index2.html">Analytical</a></li>
                                 <li><a href="index3.html">Demographical</a></li>
-                                <li><a href="index4.html">Modern</a></li>
+                                <li><a href="index4.html">Modern</a></li> -->
+                                <li><router-link to="/grafica1">Grafica 1</router-link></li>
+                                <li><router-link to="/progress">Progress</router-link></li>
                             </ul>
                         </li>
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Apps</span></a>
