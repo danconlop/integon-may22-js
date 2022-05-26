@@ -5,9 +5,9 @@ import Grafica1Component from '@/components/pages/Grafica1Component';
 import ProgressComponent from '@/components/pages/ProgressComponent';
 import DashboardComponent from '@/components/pages/DashboardComponent';
 import PagesComponent from '@/components/pages/PagesComponent';
-import LoginComponent from '@/components/pages/LoginComponent';
-import RegisterComponent from '@/components/pages/RegisterComponent';
 import PagenotfoundComponent from '@/components/pages/PagenotfoundComponent';
+import LoginComponent from '@/components/auth/LoginComponent';
+import RegisterComponent from '@/components/auth/RegisterComponent';
 
 Vue.use(VueRouter);
 
