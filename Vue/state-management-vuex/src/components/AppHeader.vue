@@ -11,7 +11,7 @@
 export default {
   methods: {
     clear() {
-      this.$store.commit("profileUpdate", {});
+      this.$store.commit("profileClear", {});
     },
   },
 };
