@@ -48,11 +48,7 @@ export default {
   },
   methods: {
     submitForm() {
-      /* this.$emit("submit", {
-        name: this.name,
-        occupation: this.occupation,
-      }); */
-      eventBus.$emit("profileUpdate", {
+      this.$store.commit("profileUpdate", {
         name: this.name,
         occupation: this.occupation,
       });
@@ -66,8 +62,6 @@ export default {
     handleProfileUpdate(formData) {
       this.name = formData.name || "";
       this.occupation = formData.occupation || "";
-      
-
     },
   },
 };

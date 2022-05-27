@@ -8,12 +8,10 @@
 </template>
 
 <script>
-import eventBus from "../event-bus";
-
 export default {
   methods: {
     clear() {
-      eventBus.$emit("profileUpdate", {});
+      this.$store.commit("profileUpdate", {});
     },
   },
 };
